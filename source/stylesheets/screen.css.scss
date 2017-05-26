@@ -70,6 +70,19 @@ html, body {
   font-size: 13px;
   font-weight: bold;
 
+  .t-logo {
+    width: 30px;
+    height: 30px;
+    margin: 12px;
+    vertical-align: middle;
+  }
+
+  .t-logo-text {
+    width: 108px;
+    height: 42px;
+    vertical-align: middle;
+  }
+
   // language selector for mobile devices
   .lang-selector {
     display: none;
