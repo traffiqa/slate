@@ -2,14 +2,10 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
+  - url
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.traffiqa.com'>Request an invitation on our homepage</a>
 
 includes:
   - errors
@@ -17,173 +13,173 @@ includes:
 search: true
 ---
 
-# Introduction
+# Traffiqa Documentation
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Traffiqa is an optimization service that will help you make your service run much faster. In this documentation we will try our best to help you to get to know and use the Traffiqa service. 
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+If you have any question, the best way to reach us is by using the online chat. Just click on the small rectangle on the right bottom corner. You can also reach us @traffiqa on twitter and also on [support@traffiqa.com](mailto:support@traffiqa.com)
 
 This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# Images
 
-> To authorize, use this code:
+## From Website Origin
 
-```ruby
-require 'kittn'
+> To get a file from your account, call this end point:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```url
+GET http://s.traffiqa.com/{accountId}/origin/{filePath}
 ```
 
-```python
-import kittn
+> Make sure to replace `{accountId}` with your account ID and `{filePath}` with your file path.
 
-api = kittn.authorize('meowmeowmeow')
-```
+You don't need to upload your files to Traffiqa in order to start using the service. you just need to tell Traffiqa where your current files are.
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+After you've [setup your account](https://app.traffiqa.com/settings) origin, you can access any file from your origin
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>{accountId}</code> with your account Id
+and <code>{filePath}</code> with the file path on your origin server.
 </aside>
 
-# Kittens
+## Origin Example
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+```url
+GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png
 ```
 
-```python
-import kittn
+> Traffiqa will go yo your service origin, grab the file, optimize it, save it and sent it back to the browser
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+For example, let's assume you have these settings:
 
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
+`Website Origin: http://www.my-awsome-service.com`
+`{accountId}: demo`
+`{filePath}: /images/my-awsome-logo.png`
 
-```javascript
-const kittn = require('kittn');
+### Processes Summary
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
+Process | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+optimize | true | Optimize image with same file type.
+format | auto | Change image file format to a different format.
+width | -- | No default. Change image width to a different one. Value are in pixels
+height | -- | No default. Change image height to a different one. Value are in pixels
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
+## Processes
 
-```ruby
-require 'kittn'
+### optimize
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+Use the `optimize` process when you want to shrink down the current image and keeping it with the same file format.
+
+* Type: `Boolean`
+* Default Value: `true`
+* Example values: `optimize=false`, `o=true`
+* Alias `o`
+
+### format
+
+Use the `format` process to enforce a certain file format, to keep original file format or specify `auto` to change file format according to user browser type.
+
+* Type: `String`
+* Default Value: `auto`
+* Example values: `format=auto`, `f=auto`, `f=png`, `f=jpg`, `f=webp`
+* Alias `f`
+
+### width
+
+Use the `width` process to change the image width, if `height` is not specified - the original `height` will change with the same proportion.
+Values are in pixels.
+
+* Type: `Integer`
+* Example values: `width=500`, `w=500`, `w=250`
+* Alias `w`
+
+### height
+
+Use the `height` process to change the image width, if `width` is not specified - the original `width` will change with the same proportion.
+Values are in pixels.
+
+* Type: `Integer`
+* Example values: `height=500`, `h=500`, `h=250`
+* Alias `h`
+
+## Default Processes Values
+
+```url
+GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png
 ```
 
-```python
-import kittn
+> Is the same as:
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+```url
+GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png?format=auto&optimize=true
 ```
 
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+> To turn off optimization and auto file format, use:
+
+```url
+GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png?format=original&optimize=false
 ```
 
-```javascript
-const kittn = require('kittn');
+If you will try to fetch an image from your origin you will see that it will be optimized without you specifying anything.
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+Traffiqa is optimized by default and you need to explicitly say that you don't want a file to be optimized
+
+
+# Javascript
+
+## Origin Example
+
+```url
+GET http://s.traffiqa.com/demo/origin/js/main.js
 ```
 
-> The above command returns JSON structured like this:
+> Traffiqa will go yo your service origin, grab the Javascript file, minify it, remove unnecessary comments and sent it back to the browser
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+For example, let's assume you have these settings:
+
+`Website Origin: http://www.my-awsome-service.com`
+`{accountId}: demo`
+`{filePath}: /js/main.js`
+
+### Processes Summary
+
+Process | Default | Description
+--------- | ------- | -----------
+minify | true | Minify your Javascript file and remove unnecessary comments.
+
+
+## Processes
+
+### minify
+
+Use the `optimize` process when you want to shrink down the current image and keeping it with the same file format.
+
+* Type: `Boolean`
+* Default Value: `true`
+* Example values: `minify=false`, `minify=true`
+
+## Default Processes Values
+
+```url
+GET http://s.traffiqa.com/demo/origin/js/main.js
 ```
 
-This endpoint retrieves a specific kitten.
+> Is the same as:
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+```url
+GET http://s.traffiqa.com/demo/origin/js/main.js?minify=true
+```
 
-### HTTP Request
+> To turn off minification and auto file format, use:
 
-`GET http://example.com/kittens/<ID>`
+```url
+GET http://s.traffiqa.com/demo/origin/js/main.js?minify=false
+```
 
-### URL Parameters
+If you will try to fetch a Javascript file from your origin you will see that it will be minified without you specifying anything.
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Traffiqa is minifying by default and you need to explicitly say that you don't want a file to be minified.
+
 
