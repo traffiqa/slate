@@ -1,0 +1,694 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;url&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <svg class="t-logo" viewBox="0 0 483 483" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <title>Traffiqa-logo</title>
+          <desc>Traffiqa Logo - Click to navigate to homepage</desc>
+          <defs></defs>
+          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="T-logo" fill="#FFFFFF">
+                  <path d="M0,135.057395 L0,409.001728 C0,449.872795 33.1301551,483 73.9982725,483 L359.000864,483 L483,483 L483,343.000864 L483,73.9982725 C483,33.1272047 449.869845,0 409.001728,0 L135.057395,0 L135.11479,0.0573952066 L0.0573952066,135.11479 L7.10542736e-15,135.057395 L0,135.057395 Z M332,445 L340.768842,445 L445,445 L445,386.159783 L445,158.504754 C445,127.289456 419.704088,102 388.5,102 C357.289051,102 332,127.29804 332,158.504754 L332,445 L332,445 Z M186,445 L299,445 L299,245.504754 C299,214.289456 273.704088,189 242.5,189 C211.289051,189 186,214.29804 186,245.504754 L186,445 L186,445 Z M39,363.651654 L39,382.798554 C39,417.153944 66.8485362,445 101.201446,445 L152,445 L152,344.504754 C152,313.289456 126.704088,288 95.5,288 C64.2890507,288 39,313.29804 39,344.504754 L39,363.651654 Z" id="Combined-Shape"></path>
+              </g>
+          </g>
+      </svg>
+      <svg class="t-logo-text" version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+           x="0px" y="0px" viewBox="25 5 70 43" xml:space="preserve">
+          <title>Traffiqa Text Logo</title>
+          <g id="Symbols">
+              <g id="mobile-portrait-top-navbar">
+                  <g id="top-navbar">
+                      <rect id="navbar" fill="#40006F" width="126" height="54"/>
+                  </g>
+                  <g id="T-logo-with-text" transform="translate(17.000000, 8.000000)">
+                      <g id="T-logo" transform="translate(0.000000, 6.000000)" display="none">
+                          <path id="Combined-Shape" display="inline" fill="#FFFFFF" d="M-46,135.058v273.944C-46,449.873-12.87,483,27.998,483h285.003
+                              H437V343.001V73.998C437,33.127,403.87,0,363.002,0H89.058l0.057,0.058L-45.942,135.115L-46,135.058L-46,135.058z M286,445
+                              h8.769H399v-58.84V158.505C399,127.289,373.704,102,342.5,102c-31.211,0-56.5,25.298-56.5,56.505V445L286,445z M140,445h113
+                              V245.505C253,214.289,227.704,189,196.5,189c-31.211,0-56.5,25.298-56.5,56.505V445L140,445z M-7,363.652v19.146
+                              C-7,417.154,20.849,445,55.202,445H106V344.505C106,313.289,80.704,288,49.5,288C18.289,288-7,313.298-7,344.505V363.652z"/>
+                      </g>
+                      <g>
+                          <path fill="#FFFFFF" d="M5.93,7.481v2.563h-7.251V29h-2.944V10.045h-7.251V7.481H5.93z"/>
+                          <path fill="#FFFFFF" d="M7.233,13.312h2.505v2.71c0.205-0.527,0.708-1.169,1.509-1.926s1.724-1.136,2.769-1.136
+                              c0.049,0,0.132,0.005,0.249,0.015s0.317,0.029,0.601,0.059v2.783c-0.156-0.029-0.3-0.049-0.432-0.059s-0.276-0.015-0.432-0.015
+                              c-1.328,0-2.349,0.428-3.062,1.282S9.87,18.863,9.87,19.977V29H7.233V13.312z"/>
+                          <path fill="#FFFFFF" d="M25.559,19.506c0.605-0.078,1.011-0.332,1.216-0.761c0.117-0.235,0.176-0.573,0.176-1.015
+                              c0-0.901-0.319-1.556-0.958-1.963c-0.639-0.407-1.552-0.61-2.741-0.61c-1.374,0-2.349,0.373-2.924,1.119
+                              c-0.321,0.412-0.531,1.025-0.628,1.84h-2.461c0.049-1.939,0.675-3.288,1.88-4.047s2.602-1.139,4.192-1.139
+                              c1.843,0,3.341,0.352,4.492,1.055c1.141,0.703,1.712,1.797,1.712,3.281v9.039c0,0.273,0.056,0.493,0.168,0.658
+                              c0.112,0.166,0.349,0.249,0.71,0.249c0.117,0,0.249-0.008,0.396-0.021c0.146-0.016,0.303-0.037,0.469-0.066v1.948
+                              c-0.41,0.117-0.723,0.19-0.938,0.22s-0.508,0.044-0.879,0.044c-0.908,0-1.567-0.322-1.978-0.967
+                              c-0.215-0.342-0.366-0.825-0.454-1.45c-0.537,0.703-1.309,1.313-2.314,1.831s-2.114,0.776-3.325,0.776
+                              c-1.455,0-2.644-0.441-3.567-1.324s-1.384-1.987-1.384-3.313c0-1.453,0.454-2.58,1.362-3.38s2.1-1.292,3.574-1.478
+                              L25.559,19.506z M20.007,26.629c0.557,0.438,1.216,0.657,1.978,0.657c0.928,0,1.826-0.215,2.695-0.644
+                              c1.465-0.712,2.197-1.877,2.197-3.495v-2.121c-0.322,0.206-0.736,0.378-1.243,0.515c-0.507,0.138-1.004,0.235-1.491,0.293
+                              l-1.593,0.205c-0.955,0.127-1.673,0.327-2.155,0.6c-0.815,0.458-1.223,1.188-1.223,2.192
+                              C19.172,25.591,19.45,26.19,20.007,26.629z"/>
+                          <path fill="#FFFFFF" d="M35.065,8.521c0.615-0.898,1.802-1.348,3.56-1.348c0.166,0,0.337,0.005,0.513,0.015
+                              s0.376,0.024,0.601,0.044v2.402c-0.276-0.02-0.477-0.031-0.6-0.037c-0.124-0.004-0.239-0.007-0.348-0.007
+                              c-0.81,0-1.293,0.208-1.452,0.622c-0.158,0.416-0.237,1.473-0.237,3.172h2.637v2.08h-2.637V29h-2.607V15.465h-2.183v-2.08h2.183
+                              v-2.461C34.533,9.83,34.724,9.029,35.065,8.521z"/>
+                          <path fill="#FFFFFF" d="M42.873,8.521c0.615-0.898,1.802-1.348,3.56-1.348c0.166,0,0.337,0.005,0.513,0.015
+                              s0.376,0.024,0.601,0.044v2.402c-0.276-0.02-0.477-0.031-0.6-0.037c-0.124-0.004-0.239-0.007-0.348-0.007
+                              c-0.81,0-1.293,0.208-1.452,0.622c-0.158,0.416-0.237,1.473-0.237,3.172h2.637v2.08h-2.637V29h-2.607V15.465h-2.183v-2.08h2.183
+                              v-2.461C42.341,9.83,42.531,9.029,42.873,8.521z"/>
+                          <path fill="#FFFFFF" d="M49.978,7.481h2.681v2.988h-2.681V7.481z M49.978,13.385h2.681V29h-2.681V13.385z"/>
+                          <path fill="#FFFFFF" d="M65.492,13.941c0.487,0.352,0.956,0.869,1.404,1.553v-2.183h2.49v21.943H66.75v-8.057
+                              c-0.439,0.703-1.046,1.263-1.821,1.677c-0.775,0.415-1.744,0.623-2.904,0.623c-1.668,0-3.16-0.654-4.477-1.963
+                              c-1.316-1.309-1.975-3.301-1.975-5.977c0-2.51,0.617-4.57,1.851-6.182c1.233-1.611,2.831-2.417,4.791-2.417
+                              C63.512,12.96,64.604,13.287,65.492,13.941z M58.897,24.781c0.672,1.631,1.876,2.446,3.612,2.446
+                              c1.833,0,3.095-0.859,3.788-2.578c0.38-0.947,0.57-2.158,0.57-3.633c0-1.357-0.209-2.49-0.629-3.398
+                              c-0.711-1.553-1.964-2.329-3.758-2.329c-1.141,0-2.118,0.496-2.932,1.486c-0.814,0.992-1.221,2.522-1.221,4.593
+                              C58.327,22.726,58.517,23.863,58.897,24.781z"/>
+                          <path fill="#FFFFFF" d="M81.735,19.506c0.605-0.078,1.011-0.332,1.216-0.761c0.117-0.235,0.176-0.573,0.176-1.015
+                              c0-0.901-0.319-1.556-0.958-1.963c-0.639-0.407-1.552-0.61-2.741-0.61c-1.374,0-2.349,0.373-2.924,1.119
+                              c-0.321,0.412-0.531,1.025-0.628,1.84h-2.461c0.049-1.939,0.675-3.288,1.88-4.047s2.602-1.139,4.192-1.139
+                              c1.843,0,3.341,0.352,4.492,1.055c1.141,0.703,1.712,1.797,1.712,3.281v9.039c0,0.273,0.056,0.493,0.168,0.658
+                              c0.112,0.166,0.349,0.249,0.71,0.249c0.117,0,0.249-0.008,0.396-0.021c0.146-0.016,0.303-0.037,0.469-0.066v1.948
+                              c-0.41,0.117-0.723,0.19-0.938,0.22s-0.508,0.044-0.879,0.044c-0.908,0-1.567-0.322-1.978-0.967
+                              c-0.215-0.342-0.366-0.825-0.454-1.45c-0.537,0.703-1.309,1.313-2.314,1.831s-2.114,0.776-3.325,0.776
+                              c-1.455,0-2.644-0.441-3.567-1.324s-1.384-1.987-1.384-3.313c0-1.453,0.454-2.58,1.362-3.38s2.1-1.292,3.574-1.478
+                              L81.735,19.506z M76.184,26.629c0.557,0.438,1.216,0.657,1.978,0.657c0.928,0,1.826-0.215,2.695-0.644
+                              c1.465-0.712,2.197-1.877,2.197-3.495v-2.121c-0.322,0.206-0.736,0.378-1.243,0.515c-0.507,0.138-1.004,0.235-1.491,0.293
+                              l-1.593,0.205c-0.955,0.127-1.673,0.327-2.155,0.6c-0.815,0.458-1.223,1.188-1.223,2.192
+                              C75.349,25.591,75.627,26.19,76.184,26.629z"/>
+                      </g>
+                  </g>
+              </g>
+          </g>
+      </svg>
+        <div class="lang-selector">
+              <a href="#" data-language-name="url">url</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://www.traffiqa.com'>Request an invitation on our homepage</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="traffiqa-documentation">Traffiqa Documentation</h1>
+
+<p>Traffiqa is an optimization service that will help you make your service run much faster. In this documentation we will try our best to help you to get to know and use the Traffiqa service. </p>
+
+<p>If you have any question, the best way to reach us is by using the online chat. Just click on the small rectangle on the right bottom corner. You can also reach us @traffiqa on twitter and also on <a href="mailto:support@traffiqa.com">support@traffiqa.com</a></p>
+
+<h1 id="images">Images</h1>
+
+<h2 id="from-website-origin">From Website Origin</h2>
+
+<blockquote>
+<p>To get a file from your account, call this end point:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/{accountId}/origin/{filePath}
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code class="prettyprint">{accountId}</code> with your account ID and <code class="prettyprint">{filePath}</code> with your file path.</p>
+</blockquote>
+
+<p>You don&rsquo;t need to upload your files to Traffiqa in order to start using the service. you just need to tell Traffiqa where your current files are.</p>
+
+<p>After you&rsquo;ve <a href="https://app.traffiqa.com/settings">setup your account</a> origin, you can access any file from your origin</p>
+
+<aside class="notice">
+You must replace <code>{accountId}</code> with your account Id
+and <code>{filePath}</code> with the file path on your origin server.
+</aside>
+
+<h2 id="origin-example">Origin Example</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png
+</code></pre>
+<blockquote>
+<p>Traffiqa will go yo your service origin, grab the file, optimize it, save it and sent it back to the browser</p>
+</blockquote>
+
+<p>For example, let&rsquo;s assume you have these settings:</p>
+
+<p><code class="prettyprint">Website Origin: http://www.my-awsome-service.com</code></p>
+
+<p><code class="prettyprint">File Path On Origin: http://www.my-awsome-service.com/images/my-awsome-logo.png</code></p>
+
+<p><code class="prettyprint">{accountId}: demo</code></p>
+
+<p><code class="prettyprint">{filePath}: /images/my-awsome-logo.png</code></p>
+
+<h3 id="processes-summary">Processes Summary</h3>
+
+<table><thead>
+<tr>
+<th>Process</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>optimize</td>
+<td>true</td>
+<td>Optimize image with same file type.</td>
+</tr>
+<tr>
+<td>format</td>
+<td>auto</td>
+<td>Change image file format to a different format.</td>
+</tr>
+<tr>
+<td>width</td>
+<td>&ndash;</td>
+<td>No default. Change image width to a different one. Value are in pixels</td>
+</tr>
+<tr>
+<td>height</td>
+<td>&ndash;</td>
+<td>No default. Change image height to a different one. Value are in pixels</td>
+</tr>
+</tbody></table>
+
+<h2 id="processes">Processes</h2>
+
+<h3 id="optimize">optimize</h3>
+
+<p>Use the <code class="prettyprint">optimize</code> process when you want to shrink down the current image and keeping it with the same file format.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">Boolean</code></li>
+<li>Default Value: <code class="prettyprint">true</code></li>
+<li>Example values: <code class="prettyprint">optimize=false</code>, <code class="prettyprint">o=true</code></li>
+<li>Alias <code class="prettyprint">o</code></li>
+</ul>
+
+<h3 id="format">format</h3>
+
+<p>Use the <code class="prettyprint">format</code> process to enforce a certain file format, to keep original file format or specify <code class="prettyprint">auto</code> to change file format according to user browser type.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">String</code></li>
+<li>Default Value: <code class="prettyprint">auto</code></li>
+<li>Example values: <code class="prettyprint">format=auto</code>, <code class="prettyprint">f=auto</code>, <code class="prettyprint">f=png</code>, <code class="prettyprint">f=jpg</code>, <code class="prettyprint">f=webp</code></li>
+<li>Alias <code class="prettyprint">f</code></li>
+</ul>
+
+<h3 id="width">width</h3>
+
+<p>Use the <code class="prettyprint">width</code> process to change the image width, if <code class="prettyprint">height</code> is not specified - the original <code class="prettyprint">height</code> will change with the same proportion.
+Values are in pixels.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">Integer</code></li>
+<li>Example values: <code class="prettyprint">width=500</code>, <code class="prettyprint">w=500</code>, <code class="prettyprint">w=250</code></li>
+<li>Alias <code class="prettyprint">w</code></li>
+</ul>
+
+<h3 id="height">height</h3>
+
+<p>Use the <code class="prettyprint">height</code> process to change the image width, if <code class="prettyprint">width</code> is not specified - the original <code class="prettyprint">width</code> will change with the same proportion.
+Values are in pixels.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">Integer</code></li>
+<li>Example values: <code class="prettyprint">height=500</code>, <code class="prettyprint">h=500</code>, <code class="prettyprint">h=250</code></li>
+<li>Alias <code class="prettyprint">h</code></li>
+</ul>
+
+<h2 id="default-processes-values">Default Processes Values</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png
+</code></pre>
+<blockquote>
+<p>Is the same as:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png?format=auto&amp;optimize=true
+</code></pre>
+<blockquote>
+<p>To turn off optimization and auto file format, use:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png?format=original&amp;optimize=false
+</code></pre>
+<p>If you will try to fetch an image from your origin you will see that it will be optimized without you specifying anything.</p>
+
+<p>Traffiqa is optimized by default and you need to explicitly say that you don&rsquo;t want a file to be optimized</p>
+
+<h1 id="javascript">Javascript</h1>
+
+<h2 id="origin-example">Origin Example</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/js/main.js
+</code></pre>
+<blockquote>
+<p>Traffiqa will go yo your service origin, grab the Javascript file, minify it, remove unnecessary comments and sent it back to the browser</p>
+</blockquote>
+
+<p>For example, let&rsquo;s assume you have these settings:</p>
+
+<p><code class="prettyprint">Website Origin: http://www.my-awsome-service.com</code></p>
+
+<p><code class="prettyprint">{accountId}: demo</code></p>
+
+<p><code class="prettyprint">{filePath}: /js/main.js</code></p>
+
+<h3 id="processes-summary">Processes Summary</h3>
+
+<table><thead>
+<tr>
+<th>Process</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>minify</td>
+<td>true</td>
+<td>Minify your Javascript file and remove unnecessary comments.</td>
+</tr>
+</tbody></table>
+
+<h2 id="processes">Processes</h2>
+
+<h3 id="minify">minify</h3>
+
+<p>Use the <code class="prettyprint">minify</code> process when you want to minify the current Javascript.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">Boolean</code></li>
+<li>Default Value: <code class="prettyprint">true</code></li>
+<li>Example values: <code class="prettyprint">minify=false</code>, <code class="prettyprint">minify=true</code></li>
+</ul>
+
+<h2 id="default-processes-values">Default Processes Values</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/js/main.js
+</code></pre>
+<blockquote>
+<p>Is the same as:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/js/main.js?minify=true
+</code></pre>
+<blockquote>
+<p>To turn off minification and auto file format, use:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/js/main.js?minify=false
+</code></pre>
+<p>If you will try to fetch a Javascript file from your origin you will see that it will be minified without you specifying anything.</p>
+
+<p>Traffiqa is minifying by default and you need to explicitly say that you don&rsquo;t want a file to be minified.</p>
+
+<h1 id="css">CSS</h1>
+
+<h2 id="origin-example">Origin Example</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/css/main.css
+</code></pre>
+<blockquote>
+<p>Traffiqa will go to your service origin, grab the CSS file, minify it, remove unnecessary comments and sent it back to the browser</p>
+</blockquote>
+
+<p>For example, let&rsquo;s assume you have these settings:</p>
+
+<p><code class="prettyprint">Website Origin: http://www.my-awsome-service.com</code></p>
+
+<p><code class="prettyprint">{accountId}: demo</code></p>
+
+<p><code class="prettyprint">{filePath}: /css/main.css</code></p>
+
+<h3 id="processes-summary">Processes Summary</h3>
+
+<table><thead>
+<tr>
+<th>Process</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>minify</td>
+<td>true</td>
+<td>Minify your CSS file and remove unnecessary comments.</td>
+</tr>
+</tbody></table>
+
+<h2 id="processes">Processes</h2>
+
+<h3 id="minify">minify</h3>
+
+<p>Use the <code class="prettyprint">minify</code> process when you want to minify the current CSS file.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">Boolean</code></li>
+<li>Default Value: <code class="prettyprint">true</code></li>
+<li>Example values: <code class="prettyprint">minify=false</code>, <code class="prettyprint">minify=true</code></li>
+</ul>
+
+<h2 id="default-processes-values">Default Processes Values</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/css/main.css
+</code></pre>
+<blockquote>
+<p>Is the same as:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/css/main.css?minify=true
+</code></pre>
+<blockquote>
+<p>To turn off minification and auto file format, use:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/css/main.css?minify=false
+</code></pre>
+<p>If you will try to fetch a CSS file from your origin you will see that it will be minified without you specifying anything.</p>
+
+<p>Traffiqa is minifying by default and you need to explicitly say that you don&rsquo;t want a file to be minified.</p>
+
+<h1 id="html">HTML</h1>
+
+<h2 id="origin-example">Origin Example</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/some.html
+</code></pre>
+<blockquote>
+<p>Traffiqa will go to your service origin, grab the HTML file, minify it, remove unnecessary comments and sent it back to the browser</p>
+</blockquote>
+
+<p>For example, let&rsquo;s assume you have these settings:</p>
+
+<p><code class="prettyprint">Website Origin: http://www.my-awsome-service.com</code></p>
+
+<p><code class="prettyprint">{accountId}: demo</code></p>
+
+<p><code class="prettyprint">{filePath}: /some.html</code></p>
+
+<h3 id="processes-summary">Processes Summary</h3>
+
+<table><thead>
+<tr>
+<th>Process</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>minify</td>
+<td>true</td>
+<td>Minify your HTML file and remove unnecessary comments.</td>
+</tr>
+</tbody></table>
+
+<h2 id="processes">Processes</h2>
+
+<h3 id="minify">minify</h3>
+
+<p>Use the <code class="prettyprint">minify</code> process when you want to minify the current HTML file.</p>
+
+<ul>
+<li>Type: <code class="prettyprint">Boolean</code></li>
+<li>Default Value: <code class="prettyprint">true</code></li>
+<li>Example values: <code class="prettyprint">minify=false</code>, <code class="prettyprint">minify=true</code></li>
+</ul>
+
+<h2 id="default-processes-values">Default Processes Values</h2>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/some.html
+</code></pre>
+<blockquote>
+<p>Is the same as:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/some.html?minify=true
+</code></pre>
+<blockquote>
+<p>To turn off minification and auto file format, use:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET http://s.traffiqa.com/demo/origin/some.html?minify=false
+</code></pre>
+<p>If you will try to fetch a HTML file from your origin you will see that it will be minified without you specifying anything.</p>
+
+<p>Traffiqa is minifying by default and you need to explicitly say that you don&rsquo;t want a file to be minified.</p>
+
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your account Id is wrong or blocked</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The request is hidden for administrators only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified request could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access a file with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t supported</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The requested file has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&rsquo;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests &ndash; Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="url">url</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
