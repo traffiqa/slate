@@ -51,7 +51,9 @@ GET http://s.traffiqa.com/demo/origin/images/my-awsome-logo.png
 For example, let's assume you have these settings:
 
 `Website Origin: http://www.my-awsome-service.com`
+
 `{accountId}: demo`
+
 `{filePath}: /images/my-awsome-logo.png`
 
 ### Processes Summary
@@ -138,7 +140,9 @@ GET http://s.traffiqa.com/demo/origin/js/main.js
 For example, let's assume you have these settings:
 
 `Website Origin: http://www.my-awsome-service.com`
+
 `{accountId}: demo`
+
 `{filePath}: /js/main.js`
 
 ### Processes Summary
@@ -193,7 +197,9 @@ GET http://s.traffiqa.com/demo/origin/css/main.css
 For example, let's assume you have these settings:
 
 `Website Origin: http://www.my-awsome-service.com`
+
 `{accountId}: demo`
+
 `{filePath}: /css/main.css`
 
 ### Processes Summary
@@ -235,4 +241,60 @@ If you will try to fetch a CSS file from your origin you will see that it will b
 
 Traffiqa is minifying by default and you need to explicitly say that you don't want a file to be minified.
 
+# HTML
+
+## Origin Example
+
+```url
+GET http://s.traffiqa.com/demo/some.html
+```
+
+> Traffiqa will go to your service origin, grab the HTML file, minify it, remove unnecessary comments and sent it back to the browser
+
+For example, let's assume you have these settings:
+
+`Website Origin: http://www.my-awsome-service.com`
+
+`{accountId}: demo`
+
+`{filePath}: /some.html`
+
+### Processes Summary
+
+Process | Default | Description
+--------- | ------- | -----------
+minify | true | Minify your HTML file and remove unnecessary comments.
+
+
+## Processes
+
+### minify
+
+Use the `minify` process when you want to minify the current HTML file.
+
+* Type: `Boolean`
+* Default Value: `true`
+* Example values: `minify=false`, `minify=true`
+
+## Default Processes Values
+
+```url
+GET http://s.traffiqa.com/demo/origin/some.html
+```
+
+> Is the same as:
+
+```url
+GET http://s.traffiqa.com/demo/origin/some.html?minify=true
+```
+
+> To turn off minification and auto file format, use:
+
+```url
+GET http://s.traffiqa.com/demo/origin/some.html?minify=false
+```
+
+If you will try to fetch a HTML file from your origin you will see that it will be minified without you specifying anything.
+
+Traffiqa is minifying by default and you need to explicitly say that you don't want a file to be minified.
 
