@@ -19,8 +19,6 @@ Traffiqa is an optimization service that will help you make your service run muc
 
 If you have any question, the best way to reach us is by using the online chat. Just click on the small rectangle on the right bottom corner. You can also reach us @traffiqa on twitter and also on [support@traffiqa.com](mailto:support@traffiqa.com)
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
 # Images
 
 ## From Website Origin
@@ -154,7 +152,7 @@ minify | true | Minify your Javascript file and remove unnecessary comments.
 
 ### minify
 
-Use the `optimize` process when you want to shrink down the current image and keeping it with the same file format.
+Use the `minify` process when you want to minify the current Javascript.
 
 * Type: `Boolean`
 * Default Value: `true`
@@ -179,6 +177,61 @@ GET http://s.traffiqa.com/demo/origin/js/main.js?minify=false
 ```
 
 If you will try to fetch a Javascript file from your origin you will see that it will be minified without you specifying anything.
+
+Traffiqa is minifying by default and you need to explicitly say that you don't want a file to be minified.
+
+# CSS
+
+## Origin Example
+
+```url
+GET http://s.traffiqa.com/demo/origin/css/main.css
+```
+
+> Traffiqa will go to your service origin, grab the CSS file, minify it, remove unnecessary comments and sent it back to the browser
+
+For example, let's assume you have these settings:
+
+`Website Origin: http://www.my-awsome-service.com`
+`{accountId}: demo`
+`{filePath}: /css/main.css`
+
+### Processes Summary
+
+Process | Default | Description
+--------- | ------- | -----------
+minify | true | Minify your CSS file and remove unnecessary comments.
+
+
+## Processes
+
+### minify
+
+Use the `minify` process when you want to minify the current CSS file.
+
+* Type: `Boolean`
+* Default Value: `true`
+* Example values: `minify=false`, `minify=true`
+
+## Default Processes Values
+
+```url
+GET http://s.traffiqa.com/demo/origin/css/main.css
+```
+
+> Is the same as:
+
+```url
+GET http://s.traffiqa.com/demo/origin/css/main.css?minify=true
+```
+
+> To turn off minification and auto file format, use:
+
+```url
+GET http://s.traffiqa.com/demo/origin/css/main.css?minify=false
+```
+
+If you will try to fetch a CSS file from your origin you will see that it will be minified without you specifying anything.
 
 Traffiqa is minifying by default and you need to explicitly say that you don't want a file to be minified.
 
