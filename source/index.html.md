@@ -52,6 +52,8 @@ For example, let's assume you have these settings:
 
 `Website Origin: http://www.my-awsome-service.com`
 
+`File Path On Origin: http://www.my-awsome-service.com/images/my-awsome-logo.png`
+
 `{accountId}: demo`
 
 `{filePath}: /images/my-awsome-logo.png`
